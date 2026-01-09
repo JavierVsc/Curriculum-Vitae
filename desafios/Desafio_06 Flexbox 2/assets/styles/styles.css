@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #1b1f21;
+  background: #ffffff;
+}
+
+.contenedor-app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Columna lateral */
+.barra-lateral {
+  flex: 0 0 320px;
+  border-right: 1px solid #e8ebe4;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* Barra  con estado del usuario e íconos */
+.barra-usuario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e8ebe4;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.usuario__foto {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.usuario__texto {
+  line-height: 1.1;
+}
+
+.usuario__nombre {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.usuario__estado {
+  margin: 0;
+  font-size: 10px;
+  color: #828485;
+}
+
+.usuario__iconos {
+  display: flex;
+  gap: 16px;
+  font-size: 18px;
+  color: #444749;
+}
+
+.usuario__iconos i {
+  cursor: pointer;
+}
+
+.bloque-nuevo-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 16px;
+  border-bottom: 1px solid #e8ebe4;
+}
+
+.boton {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.boton--principal {
+  width: 180px;
+  padding: 12px 18px;
+  background: #a491d2;
+  color: #ffffff;
+}
+
+.boton--principal:hover {
+  filter: brightness(0.96);
+}
+
+/* 3) Lista vertical de contactos */
+.lista-contactos {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contactos */
+.contacto {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e8ebe4;
+}
+
+.contacto__foto {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.contacto__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contacto__nombre {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.contacto__mensaje {
+  margin: 0;
+  font-size: 14px;
+  color: #444749;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 2) Sección principal */
+.seccion-principal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 32px;
+  max-width: 520px;
+}
+
+.principal__icono {
+  width: 220px;
+  height: 220px;
+  border-radius: 8px;
+  display: block;
+}
+
+.principal__titulo {
+  margin: 0;
+  font-size: 45px;
+}
+
+.principal__descripcion {
+  margin: 0;
+  max-width: 420px;
+  font-size: 14px;
+  color: #444749;
+  line-height: 1.4;
+}
