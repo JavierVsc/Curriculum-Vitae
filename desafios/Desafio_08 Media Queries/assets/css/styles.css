@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
+    background: #f4f7f5; 
+    color: #0f172a; 
+}
+
+:root {
+  --verde-oscuro: #0b3d2e;
+  --verde-principal: #137a4a;
+  --verde-claro: #e7f6ee;
+  --borde: #d6e2dc;
+  --blanco: #ffffff;
+  --texto: #0f172a;
+}
+/* LAyout con grid */
+.pagina {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "navegacion"
+    "filtros"
+    "contenido"
+    "pie";
+  grid-template-rows: auto auto 1fr auto;
+}
+
+/* áreas */
+.navegacion {
+  grid-area: navegacion;
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+}
+
+.filtros {
+  grid-area: filtros;
+  background: var(--verde-claro);
+  border-bottom: 1px solid var(--borde);
+}
+
+.contenido {
+  grid-area: contenido;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pie {
+  grid-area: pie;
+  background: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* FLEX */
+.navegacion__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.navegacion__marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.navegacion__icono {
+  font-size: 18px;
+}
+
+.navegacion__hamburguesa {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.navegacion__links {
+  list-style: none;
+  display: none;
+}
+
+.navegacion__link {
+  display: block;
+  padding: 10px 14px;
+  color: var(--blanco);
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.navegacion__link:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.filtros {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.filtros__titulo {
+  font-size: 14px;
+  font-weight: 600;
+  color: #14532d;
+}
+
+.filtros__select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  background: var(--blanco);
+}
+
+/* productos */
+.productos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+/* tarjetas con flex */
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta__imagen {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.tarjeta__nombre {
+  font-size: 14px;
+  font-weight: 800;
+  color: #14532d;
+  text-align: center;
+}
+
+.tarjeta__precio {
+  font-size: 13px;
+  color: #334155;
+}
+
+.tarjeta__boton {
+  border: 0;
+  background: var(--verde-principal);
+  color: var(--blanco);
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tarjeta__boton:hover {
+  filter: brightness(1.05);
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.paginacion__link {
+  text-decoration: none;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  color: var(--verde-principal);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.paginacion__link--activa {
+  background: var(--verde-principal);
+  color: var(--blanco);
+  border-color: var(--verde-principal);
+}
+
+/* footer */
+.pie__iconos {
+  display: flex;
+  gap: 10px;
+}
+
+.pie__icono {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.pie__texto {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 576px) {
+  .pagina {
+    grid-template-areas:
+      "navegacion filtros"
+      "navegacion contenido"
+      "pie pie";
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .navegacion__hamburguesa {
+    display: none;
+  }
+
+  .navegacion__links {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 0 12px 0;
+  }
+
+  .filtros {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filtros__select {
+    width: min(520px, 90%);
+  }
+
+  .productos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
